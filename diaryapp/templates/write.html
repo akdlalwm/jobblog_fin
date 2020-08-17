@@ -4,14 +4,16 @@
 <br>
 <form action="{% url 'write' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-	<h4>제목: </h4>
-	<input type="text" name="title" placeholder="제목을 입력하세요!" style="width:100%;font-size:20px;">
-    <br>
-    <br>
-    <input type="file" name="image">
-	<h4>본문: </h4>
-	<textarea cols=40 rows=10 name="body" placeholder="내용을 입력하세요!" style="width:100%;font-size:20px;"></textarea>
-    <br>
+    <div align="center">
+        <h3>제목 </h3>
+        <input type="text" name="title" placeholder="제목을 입력하세요!" style="width:800px;font-size:20px;">
+        <br>
+        <br>
+        <input type="file" name="image">
+        <h3>본문 </h3>
+        <textarea cols=40 rows=10 name="body" placeholder="내용을 입력하세요!" style="width:100%;font-size:20px;"></textarea>
+        <br>
+    </div>
     <div align="center">
         <input type="submit" value="제출하기">
     </div>

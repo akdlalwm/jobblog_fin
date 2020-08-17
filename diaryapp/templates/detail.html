@@ -1,34 +1,36 @@
 {% extends "base.html" %}
 
 {% block contents %}
-<hr>
 <div>
     {% for item in page %}
       {{item}}
     {% endfor %}
     <div>
+        <div style=" background-color: rgb(111, 160, 224); width: 110px; border: 3px solid rgb(61, 131, 236); border-radius: 8px; padding: 10px; font-family: Arial; font-style: bold; font-size: 20px; color: rgb(255, 255, 255);">채용공고</div><hr><br>
         <div align="right">
             <a href="{% url 'rewrite' diary_detail.page_number %}">수정 </a> |
             <a href="{% url 'remove' diary_detail.page_number %}">삭제</a>
         </div>
-        <h4>제목: {{ diary_detail.title }}</h4>
     </div>
-    {% if diary_detail.image %}
-        <img src="{{ diary_detail.image.url }}" >
-    {% endif %}
-    <div>
-        <h5 align="right">{{ diary_detail.pub_date }}</h5>
-        {{ diary_detail.body }}<br>
-    </div> 
+    <div align="center">
+        <h3 style="font-size: 30px;">{{ diary_detail.title }}</h3>
+        {% if diary_detail.image %}
+            <img src="{{ diary_detail.image.url }}" width="700px" height="800px"><br>
+        {% endif %}
+        <br><br>
+        <div style="font-size: 20px;">{{ diary_detail.body }}<br></div>
+    </div>
+    <h5 align="right">{{ diary_detail.pub_date }}</h5> 
     <hr>
     <div align="center">
         {% if diary_detail.page_number > 1 %}
-        <a href="{% url 'before' diary_detail.page_number %}">이전 일기</a> |
+        <a href="{% url 'before' diary_detail.page_number %}" class="button" style="font-size: 20px;">이전 공고</a> |
         {% endif %}
         {% if diary_detail.page_number < row_count %}
-        <a href="{% url 'next' diary_detail.page_number %}">다음 일기</a> |
+        <a href="{% url 'next' diary_detail.page_number %}" class="button" style="font-size: 20px;">다음 공고</a>|
         {% endif %}
-        <a href="{% url 'main' %}">목록으로</a>
+        <a href="{% url 'main' %}" class="button" style="font-size: 20px;">목록으로</a>
+        <br><br><br>
     </div>   
 </div>
 {% endblock %}

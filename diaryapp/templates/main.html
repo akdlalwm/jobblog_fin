@@ -26,7 +26,7 @@
                             <a href="{% url  'detail' item.page_number %}" class="btn btn-primary">...더보기 &rarr;</a>
                         </p>
                         
-                        <div class="card-footer text-muted">
+                        <div class="card-footer text-muted" align="right">
                             {{item.pub_date}}<br>
                         </div>
                     {% endfor %}
@@ -37,13 +37,13 @@
                 <ul class="pagination justify-content-center mb-4">
                     {% if diary.has_previous %}
                     
-                    <a class="page-link" href="?page={{diary.previous_page_number}}">&larr; 이전으로</a>
+                    <a class="page-link" href="?page={{diary.previous_page_number}}"  style="font-size: 20px;">&larr; 이전으로</a>
                 
                     {% endif %}
                     {% if diary.has_next %}
                     
                     <span class="button">{{diary.number}}</span>
-                        <a class="page-link" href="?page={{diary.next_page_number}}">다음으로 &rarr;</a>
+                        <a class="page-link" href="?page={{diary.next_page_number}}"  style="font-size: 20px;">다음으로 &rarr;</a>
                     {% endif %}
                 </ul>
             </div>
