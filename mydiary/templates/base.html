@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title> THE EASY TRADE</title>
+  <meta name="description" content="Oishii - Fine Japanese Cuisine ">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/layout.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css"  rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/blog-home.css"  rel="stylesheet">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Bubblegum+Sans|Caveat+Brush|Chewy|Lobster+Two');
+html {
+    width: 100%;
+    height: 100%;
+    margin-top:100px;
+}
+.navbar  {
+    border: 0;
+    z-index: 9999;
+    letter-spacing: 4px;
+    background-color:#368af8;
+}
+.navbar .nav > li > a  {
+  line-height: 30px;   /*50px*/
+  font-size: 15px;
+}
+.navbar li a, .navbar{
+    color:white !important;
+    font-size: 15px;  
+    transition: all 0.6s 0s;
+    font-weight:1000;
+    padding-right : 8px;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a, .navbar-nav li a:hover, .navbar-nav li.active a{
+    color: red !important;
+}
+.logo {
+    display: block;
+    height: auto;
+    width: 5px;
+    padding-top: 5px;
+    
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+        color: red;
+}
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+        color:red;
+}
+
+.navbar-default .navbar-nav>li>.dropdown-menu {
+        background-color: #368af8;
+}
+
+.navbar-default .navbar-nav>li>.dropdown-menu>li>a:hover,
+.navbar-default .navbar-nav>li>.dropdown-menu>li>a:focus {
+        color:red;
+        background-color:#368af8;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+        color:red;
+        background-color:#368af8;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+        color: red;
+        background-color:#368af8;
+}
+
+.navbar-default .navbar-toggle {
+        border-color:#368af8;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+        background-color:#368af8;
+}
+
+.navbar-default .navbar-link:hover {
+        color: red;
+}
+
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+            color: #ecf0f1;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+            color:red;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
+            color:red;
+            background-color:#368af8;
+}
+}
+.navbar-header h1 {
+    letter-spacing: 1px;
+    line-height: 20px;  /*70px*/
+    font-weight:1000;
+    color:white !important;
+}
+.button{
+    background-color: lightblue;
+    font-size: 12px; 
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+</style>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#myNavbar">
+                <span class="glyphicon glyphicon-menu-hamburger"></span>
+            </button>
+           
+          
+         <div class="navbar-left logo"> 
+       
+
+          </div>
+      <h1 class="brand brand-name navbar-left"><div class="navbar-left">THE EASY TRADE</h1>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+          <ul class="nav navbar-nav">
+                <li><a  class="active" href ="{%url 'main' %}">메인</a></li>
+               <li><a href="{%url 'main' %}">기업 맞춤형 서비스</a></li>
+          <li class="nav-item dropdown"><a class ="dropdown-toggle" href="#" data-toggle="dropdown">오픈형 서비스
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+              <li><a href="{%url 'main' %}">직업 공고</a></li>
+              <li><a href="{%url 'main' %}">게시판</a></li>
+          </ul> 
+          </li>
+          <li><a href="#about">로그인</a></li>
+          </ul>
+        </div>
+    </div>
+</nav>
+    {% block contents %}
+
+    {% endblock  %}
+
+</body>
+
+</html>

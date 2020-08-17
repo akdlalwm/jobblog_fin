@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<br>
+<form action="{% url 'rewrite' diary.page_number %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+	<h4>제목: </h4>
+	<input type="text" name="title" style="width:100%;font-size:20px;" value="{{ diary.title }}">
+    <br>
+    <br>
+	<h4>본문: </h4>
+	<textarea cols=40 rows=10 name="body" style="width:100%;font-size:20px;">{{diary.body}}</textarea>
+    <br>
+    <div align="center">
+        <input type="submit" value="제출하기">
+    </div>
+</form>
+{% endblock %}

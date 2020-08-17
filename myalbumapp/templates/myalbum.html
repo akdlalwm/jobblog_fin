@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block contents %}
+<br>
+<form action="{% url 'myalbum' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    제목 :
+    <input type="text" name="title"> <br><br>
+    내용 :
+    <input type="file" name="image">
+    <input type="submit" value="Upload" />
+</form>
+<div>
+{% for item in myimage %}
+<hr>
+<h4> 앨범 제목: {{item.title}} </h4> 
+<div align="right">
+    <a href="{% url 'remove_album' item.id %}">삭제</a>
+</div>
+<img src="{{ item.image.url }}" width="200px" height="100px">
+<br><br>
+{% endfor %}
+</div>
+{% endblock %}

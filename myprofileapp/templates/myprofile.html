@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contents %}
+<br>
+<hr>
+  <img src="{% static 'images/bororo.jpg' %}" alt="">
+  <hr>
+  <br>
+  <div align="center">
+      <h3>내 이름은 뽀로로!! 노는 것을 좋아하지!!</h3>
+      궁금한 점은 댓글을 달아줘!!
+      <a href="{% url 'cummunity' %}">커뮤니티 창으로 이동</a>
+  </div>
+{% endblock %}
