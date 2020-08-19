@@ -40,5 +40,6 @@ urlpatterns = [
         myalbumapp.views.remove_album,
         name="remove_album",
     ),
+    path('search', diaryapp.views.search, name='search'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

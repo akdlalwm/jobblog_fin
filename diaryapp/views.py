@@ -84,3 +84,13 @@ def remove(request, diary_id):
             pass
 
     return redirect("/")
+
+def search(request):
+    diarys = Diary.objects.all().order_by('-id')
+    q = request.POST.get('q', "")
+
+    if q:
+        diarys = diarys.filter(title__icontains=q)
+        return render(request, 'search.html', {'diarys': diarys, 'q' : q})
+    else:
+        return render(request, 'search.html')

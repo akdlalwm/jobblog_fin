@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if not diarys %}
+
+        <h1>검색 결과가 없습니다</h1>
+
+    {% else %}
+
+        {% for diary in diarys %}
+            <div class="container"> 
+                <div class="card">
+                    <div class="card-body">
+                        <h1>{{ diary.title }}</h1>
+                        <p>{{ diary.pub_date | date:"Y-m-d" }}</p>
+                        <p>{{ diary.summary }}<a href="{% url 'detail' diary.id %}"> ...자세히 보기</a></p> 
+                    </div>
+                </div>
+            </div>
+        <br>
+        {% endfor %}
+        
+    {% endif %}
+
+{% endblock %}
